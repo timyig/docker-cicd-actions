@@ -23,9 +23,8 @@ jobs:
       - name: Build Docker image
         run: |
           DATETIME=$(date +"%Y-%m-%d-%H-%M")
-          IMAGE="ghcr.io/$GITHUB_REPOSITORY:dev"
-          echo $IMAGE
-          docker build -t $IMAGE .
+          IMAGE="ghcr.io/$GITHUB_REPOSITORY"
+          docker build -t $IMAGE:dev .
           docker tag $IMAGE $IMAGE:dev-$DATETIME
           docker images --all
           
