@@ -42,4 +42,4 @@ jobs:
       - name: Push Docker image
         if: ${{ !env.ACT }}
         run: |
-          docker push ghcr.io/${{ IMAGE }} --all-tags
+          docker push ghcr.io/${IMAGE} --all-tags
