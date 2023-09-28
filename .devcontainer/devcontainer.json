@@ -11,7 +11,8 @@
 		"extensions": [
 			"ms-azuretools.vscode-docker",
 			"eamodio.gitlens",
-			"yzhang.markdown-all-in-one"
+			"yzhang.markdown-all-in-one",
+			"GitHub.vscode-github-actions"
 		]
 	}
 }
