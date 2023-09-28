@@ -24,7 +24,7 @@ jobs:
         run: |
           DATETIME=$(date +"%Y-%m-%d-%H-%M")
           echo $DATETIME
-          IMAGE="$GITHUB_REPOSITORY-$DATETIME"
+          IMAGE="$GITHUB_REPOSITORY"
           echo $IMAGE
           docker build -t $IMAGE .
           docker tag $IMAGE dev
@@ -43,4 +43,4 @@ jobs:
         if: ${{ !env.ACT }}
         run: |
           echo ${IMAGE}
-          docker push ghcr.io/timyig/${IMAGE} --all-tags
+          docker push ghcr.io/timyig/docker-cicd-actions --all-tags
