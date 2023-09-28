@@ -30,6 +30,7 @@ jobs:
           docker tag $IMAGE dev
           docker tag $IMAGE dev-$IMAGE
           docker images --all
+          docker build -t dev .
           
       - name: Login to ghcr.io
         if: ${{ !env.ACT }}
@@ -43,6 +44,6 @@ jobs:
         if: ${{ !env.ACT }}
         run: |
           echo $IMAGE
-          IMAGE_URL="ghcr.io/${{ IMAGE }}"
+          IMAGE_URL="ghcr.io/${IMAGE}"
           echo $IMAGE_URL
-          docker push IMAGE_URL
+          docker push ghcr.io/timyig/dev:latest
