@@ -41,4 +41,4 @@ jobs:
       - name: Push Docker image
         if: ${{ !env.ACT }}
         run: |
-          docker push $IMAGE --all-tags 
+          docker push $IMAGE
