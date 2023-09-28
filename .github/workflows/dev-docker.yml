@@ -42,4 +42,5 @@ jobs:
       - name: Push Docker image
         if: ${{ !env.ACT }}
         run: |
-          docker push ghcr.io/${GITHUB_ACTOR}/${IMAGE} --all-tags
+          echo ${IMAGE}
+          docker push ghcr.io/timyig/${IMAGE} --all-tags
