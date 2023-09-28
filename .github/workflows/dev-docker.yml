@@ -25,7 +25,7 @@ jobs:
           DATETIME=$(date +"%Y-%m-%d-%H-%M")
           IMAGE="ghcr.io/$GITHUB_REPOSITORY"
           docker build -t $IMAGE:dev .
-          docker tag $IMAGE $IMAGE:dev-$DATETIME
+          docker tag $IMAGE:dev $IMAGE:dev-$DATETIME
           docker images --all
           
       - name: Login to ghcr.io
