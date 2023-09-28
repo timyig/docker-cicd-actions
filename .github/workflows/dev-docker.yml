@@ -43,4 +43,4 @@ jobs:
         if: ${{ !env.ACT }}
         run: |
           echo ${IMAGE}
-          docker push ghcr.io/timyig/timyig/docker-cicd-actions --all-tags
+          docker push ghcr.io/timyig/docker-cicd-actions --all-tags
