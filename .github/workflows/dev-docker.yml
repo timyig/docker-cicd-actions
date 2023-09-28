@@ -23,14 +23,12 @@ jobs:
       - name: Build Docker image
         run: |
           DATETIME=$(date +"%Y-%m-%d-%H-%M")
-          echo $DATETIME
-          IMAGE="$GITHUB_REPOSITORY"
+          IMAGE="ghcr.io/$GITHUB_REPOSITORY"
           echo $IMAGE
           docker build -t $IMAGE .
           docker tag $IMAGE dev
           docker tag $IMAGE dev-$IMAGE
           docker images --all
-          docker build -t ghcr.io/timyig/dev:latest .
           
       - name: Login to ghcr.io
         if: ${{ !env.ACT }}
@@ -43,7 +41,4 @@ jobs:
       - name: Push Docker image
         if: ${{ !env.ACT }}
         run: |
-          echo $IMAGE
-          IMAGE_URL="ghcr.io/${IMAGE}"
-          echo $IMAGE_URL
-          docker push ghcr.io/timyig/dev:latest
+          docker push $IMAGE --all-tags 
