@@ -43,4 +43,4 @@ jobs:
         if: ${{ !env.ACT }}
         run: |
           echo ${IMAGE}
-          docker push ghcr.io/${{IMAGE}}
+          docker push ghcr.io/${{ IMAGE }}
