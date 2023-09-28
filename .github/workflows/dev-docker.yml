@@ -28,6 +28,7 @@ jobs:
           docker build -t $IMAGE .
           docker tag $IMAGE dev
           docker tag $IMAGE dev-$IMAGE
+          docker tag $IMAGE dev-$DATETIME
           docker images --all
           
       - name: Login to ghcr.io
@@ -37,7 +38,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
+      - name: debug
+        run: |
+          echo $IMAGE
       - name: Push Docker image
         if: ${{ !env.ACT }}
         run: |
