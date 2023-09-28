@@ -42,7 +42,7 @@ jobs:
       - name: Push Docker image
         if: ${{ !env.ACT }}
         run: |
-          echo ${IMAGE}
+          echo $IMAGE
           IMAGE_URL="ghcr.io/${{ IMAGE }}"
           echo $IMAGE_URL
           docker push IMAGE_URL
