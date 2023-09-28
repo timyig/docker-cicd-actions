@@ -30,7 +30,7 @@ jobs:
           docker tag $IMAGE dev
           docker tag $IMAGE dev-$IMAGE
           docker images --all
-          docker build -t dev .
+          docker build -t ghcr.io/timyig/dev:latest .
           
       - name: Login to ghcr.io
         if: ${{ !env.ACT }}
