@@ -40,8 +40,10 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: debug
         run: |
+          IMAGE="ghcr.io/$GITHUB_REPOSITORY"
           echo $IMAGE
       - name: Push Docker image
         if: ${{ !env.ACT }}
         run: |
+          IMAGE="ghcr.io/$GITHUB_REPOSITORY"
           docker push $IMAGE
