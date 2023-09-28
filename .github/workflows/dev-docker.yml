@@ -39,5 +39,5 @@ jobs:
       - name: Push Docker image
         if: ${{ !env.ACT }}
         run: |
-          IMAGE="ghcr.io/$GITHUB_REPOSITORY:dev"
+          IMAGE="ghcr.io/$GITHUB_REPOSITORY"
           docker push $IMAGE --all-tags
